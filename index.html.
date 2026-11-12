@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pour Mado ❤️</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(145deg, #10000b, #430018, #17000d);
+  color: white;
+  font-family: Georgia, serif;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.container {
+  padding: 45px 22px;
+  max-width: 600px;
+  margin: auto;
+}
+
+h1 {
+  color: #ff799d;
+  font-size: 38px;
+  margin-top: 35px;
+}
+
+.heart {
+  font-size: 65px;
+  animation: beat 1s infinite;
+}
+
+@keyframes beat {
+  50% { transform: scale(1.2); }
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.9;
+}
+
+.letter {
+  background: rgba(255,255,255,0.09);
+  border: 1px solid #a83b60;
+  border-radius: 18px;
+  padding: 25px 18px;
+  margin-top: 30px;
+}
+
+button {
+  background: #e73569;
+  color: white;
+  border: none;
+  padding: 14px 25px;
+  border-radius: 30px;
+  font-size: 16px;
+  margin: 15px;
+}
+
+.floating {
+  position: fixed;
+  bottom: -30px;
+  animation: floatUp 7s linear forwards;
+  pointer-events: none;
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+iframe {
+  width: 100%;
+  max-width: 400px;
+  height: 225px;
+  border-radius: 15px;
+  border: none;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="heart">❤️</div>
+
+<h1>Pour toi, Mado</h1>
+
+<p>Il y a des personnes que l'on rencontre...</p>
+<p>Et puis il y a celles qui, sans même le savoir,
+finissent par occuper une place particulière dans nos pensées.</p>
+
+<button onclick="showLetter()">Ouvre ton petit secret 💌</button>
+
+<div class="letter" id="letter" style="display:none">
+
+<h2>À toi, Mado... ❤️</h2>
+
+<p>
+Je ne sais pas vraiment par où commencer,
+car certains sentiments sont trop profonds
+pour être enfermés dans de simples mots.
+</p>
+
+<p>
+Depuis un certain temps, tu occupes une place
+particulière dans mes pensées.
+Ton prénom a cette étrange douceur
+qui suffit parfois à embellir une journée.
+</p>
+
+<p>
+Je t'aime en secret, Mado.
+Pas parce que je n'ai rien à dire,
+mais parce que j'ai longtemps gardé
+ces sentiments au fond de mon cœur.
+</p>
+
+<p>
+Aujourd'hui, j'ai décidé de laisser parler
+mon cœur et de te révéler ce que je ressens.
+Je ne te demande aucune réponse immédiate,
+seulement de recevoir ces mots avec sincérité.
+</p>
+
+<p>
+Si la vie m'offre un jour la chance
+de découvrir ton sourire de plus près,
+j'aimerais écrire avec toi
+une belle histoire.
+</p>
+
+<h2>Avec toute ma sincérité ❤️</h2>
+<p>Quelqu'un qui pense tendrement à toi...</p>
+
+</div>
+
+<h2>🎵 Une musique pour toi</h2>
+<p>Dip Doundou Guiss — Yaamay Gungee</p>
+
+<iframe
+src="https://www.youtube-nocookie.com/embed/DoRYp38XfXI"
+title="Musique pour Mado"
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen>
+</iframe>
+
+<p style="color:#ff9ab5">
+Mado, cette petite page est simplement pour toi. ❤️
+</p>
+
+</div>
+
+<script>
+function showLetter() {
+  document.getElementById("letter").style.display = "block";
+}
+
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.className = "floating";
+  heart.innerHTML = Math.random() > 0.5 ? "❤️" : "💕";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (15 + Math.random() * 20) + "px";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 7000);
+}
+
+setInterval(createHeart, 450);
+</script>
+
+</body>
+</html>
