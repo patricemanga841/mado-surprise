@@ -159,12 +159,40 @@ allowfullscreen>
 Mado, cette petite page est simplement pour toi. ❤️
 </p>
 
+<h2>❤️ Mado, quelle est ta réponse ?</h2>
+
+<p>J'aimerais simplement savoir ce que ton cœur ressent.</p>
+
+<button onclick="reponseOui()">
+❤️ Oui, je veux être avec toi
+</button>
+
+<button onclick="reponseTemps()">
+💌 J'ai besoin de temps
+</button>
+
+<div id="choix" style="display:none; padding:15px;">
+<p id="messageChoix"></p>
+</div>
+  
 </div>
 
 <script>
 function showLetter() {
   document.getElementById("letter").style.display = "block";
 }
+function reponseOui() {
+  document.getElementById("choix").style.display = "block";
+  document.getElementById("messageChoix").innerHTML =
+  "❤️ Tu viens de rendre mon cœur heureux, Mado. J'aimerais construire une belle histoire avec toi.";
+}
+
+function reponseTemps() {
+  document.getElementById("choix").style.display = "block";
+  document.getElementById("messageChoix").innerHTML =
+  "💌 Je comprends, Mado. Prends tout le temps dont tu as besoin. Je respecterai tes sentiments et ta décision.";
+  }
+  
 
 function createHeart() {
   const heart = document.createElement("div");
